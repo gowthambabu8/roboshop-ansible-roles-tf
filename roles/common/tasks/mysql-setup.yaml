@@ -1,0 +1,4 @@
+- name: install mysql
+  ansible.builtin.dnf:
+    name: mysql-server
+    state: present

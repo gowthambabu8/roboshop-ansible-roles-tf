@@ -1,0 +1,22 @@
+- name: cofigure redis
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: redis-setup.yaml
+
+- name: update data in redis.conf
+  ansible.builtin.lineinfile:
+    path: "/etc/redis/redis.conf"
+    regexp: "protected-mode"
+    line: "protected-mode no"
+
+- name: update listening ip to global
+  ansible.builtin.replace:
+    path: "/etc/redis/redis.conf"
+    regexp: "127.0.0.1"
+    replace: "0.0.0.0"
+
+- name: enable and start redis service
+  ansible.builtin.service:
+    name: redis
+    enabled: yes
+    state: started

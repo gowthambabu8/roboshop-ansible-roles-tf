@@ -1,0 +1,13 @@
+- name: mysql installation 
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: mysql-setup.yaml
+
+- name: start and enable mysqld service
+  ansible.builtin.service:
+    name: mysqld
+    state: restarted
+    enabled: yes
+
+- name: setup root password
+  ansible.builtin.command: mysql_secure_installation --set-root-pass {{ MYSQL_ROOT_PASS }}
