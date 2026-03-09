@@ -2,7 +2,13 @@
   ansible.builtin.import_role:
     name: common
     tasks_from: mysql-setup.yaml
-
+- name: botocore and boto3 installation
+  ansible.builtin.pip:
+    name: "{{ item }}"
+    executable: pip3.9
+  loop:
+    - botocore
+    - boto3
 - name: start and enable mysqld service
   ansible.builtin.service:
     name: mysqld
