@@ -11,3 +11,4 @@ SHIPPING_HOST: shipping-dev.happielearning.com
 RABBITMQ_HOST: rabbitmq-dev.happielearning.com
 PAYMENT_HOST: payment-dev.happielearning.com
 FRONTEND_HOST: frontend-dev.happielearning.com
+app_version: v3
