@@ -1,14 +1,14 @@
 ansible_user: ec2-user
 ansible_password: DevOps321
 
-MONGODB_HOST: mongo-dev.happielearning.com
-REDIS_HOST: redis-dev.happielearning.com
-USER_HOST: user-dev.happielearning.com
-CART_HOST: cart-dev.happielearning.com
-CATALOGUE_HOST: catalogue-dev.happielearning.com
-MYSQL_HOST: mysql-dev.happielearning.com
-SHIPPING_HOST: shipping-dev.happielearning.com
-RABBITMQ_HOST: rabbitmq-dev.happielearning.com
-PAYMENT_HOST: payment-dev.happielearning.com
-FRONTEND_HOST: frontend-dev.happielearning.com
+MONGODB_HOST: mongo-{{ environment }}.happielearning.com
+MYSQL_HOST: mysql-{{ environment }}.happielearning.com
+REDIS_HOST: redis-{{ environment }}.happielearning.com
+RABBITMQ_HOST: rabbitmq-{{ environment }}.happielearning.com
+USER_HOST: user.backend-alb-{{ environment }}.happielearning.com
+CART_HOST: cart.backend-alb-{{ environment }}.happielearning.com
+CATALOGUE_HOST: catalogue.backend-alb-{{ environment }}.happielearning.com
+SHIPPING_HOST: shipping.backend-alb-{{ environment }}.happielearning.com
+PAYMENT_HOST: payment.backend-alb-{{ environment }}.happielearning.com
+FRONTEND_HOST: frontend-{{ environment }}.happielearning.com
 app_version: v3
