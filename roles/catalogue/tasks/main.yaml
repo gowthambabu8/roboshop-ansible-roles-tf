@@ -1,6 +1,6 @@
 - name: print message
   ansible.builtin.debug:
-    msg: "Component: {{ component }}, Environment: {{ environment }}, App Version: {{ app_version }}"
+    msg: "Component: {{ component }}, Environment: {{ env }}, App Version: {{ app_version }}"
 - name: app setup import role
   ansible.builtin.import_role:
     name: common
